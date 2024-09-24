@@ -4,8 +4,8 @@ const TrainRecord = require('../models/trainrecord');
 
 // Create a new train record
 router.post('/', async (req, res) => {
-  const { compartmentNumber, componentsToChange, notes } = req.body;
-  const trainRecord = new TrainRecord({ compartmentNumber, componentsToChange, notes });
+  const { coachNumber, componentsToChange, code, notes } = req.body;
+  const trainRecord = new TrainRecord({ coachNumber, componentsToChange, code, notes });
   try {
     await trainRecord.save();
     res.status(201).send(trainRecord);
